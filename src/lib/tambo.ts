@@ -239,7 +239,7 @@ export const tools: TamboTool[] = [
       linkedin_url: z.string().optional().nullable(),
       portfolio_url: z.string().optional().nullable(),
       years_of_experience: z.number().optional().nullable(),
-      current_role: z.string().optional().nullable(),
+      current_title: z.string().optional().nullable(),
       bio: z.string().optional().nullable(),
       skills: z.array(z.string()),
       created_at: z.string(),
@@ -257,7 +257,7 @@ export const tools: TamboTool[] = [
       linkedin_url?: string;
       portfolio_url?: string;
       years_of_experience?: number;
-      current_role?: string;
+      current_title?: string;
       bio?: string;
       skills?: string[];
     }) => {
@@ -272,7 +272,7 @@ export const tools: TamboTool[] = [
       linkedin_url: z.string().optional(),
       portfolio_url: z.string().optional(),
       years_of_experience: z.number().optional(),
-      current_role: z.string().optional(),
+      current_title: z.string().optional(),
       bio: z.string().optional(),
       skills: z.array(z.string()).optional(),
     }),
@@ -286,7 +286,7 @@ export const tools: TamboTool[] = [
       linkedin_url: z.string().optional().nullable(),
       portfolio_url: z.string().optional().nullable(),
       years_of_experience: z.number().optional().nullable(),
-      current_role: z.string().optional().nullable(),
+      current_title: z.string().optional().nullable(),
       bio: z.string().optional().nullable(),
       skills: z.array(z.string()),
       created_at: z.string(),

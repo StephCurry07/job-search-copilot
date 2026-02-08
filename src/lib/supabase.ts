@@ -16,7 +16,7 @@ export interface UserProfile {
   linkedin_url?: string;
   portfolio_url?: string;
   years_of_experience?: number;
-  current_role?: string;
+  current_title?: string;
   bio?: string;
   skills: string[];
   created_at: string;

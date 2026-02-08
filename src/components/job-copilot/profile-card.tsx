@@ -12,7 +12,7 @@ export const profileCardSchema = z.object({
     linkedin_url: z.string().optional(),
     portfolio_url: z.string().optional(),
     years_of_experience: z.number().optional(),
-    current_role: z.string().optional(),
+    current_title: z.string().optional(),
     bio: z.string().optional(),
     skills: z.array(z.string()),
   }).describe("User profile data"),
@@ -34,8 +34,8 @@ export function ProfileCard({ profile, resumes, className }: ProfileCardProps) {
       <div className="flex items-start justify-between mb-4">
         <div>
           <h3 className="text-xl font-bold">{profile.full_name || "Your Profile"}</h3>
-          {profile.current_role && (
-            <p className="text-sm text-muted-foreground mt-1">{profile.current_role}</p>
+          {profile.current_title && (
+            <p className="text-sm text-muted-foreground mt-1">{profile.current_title}</p>
           )}
         </div>
         {profile.years_of_experience && (

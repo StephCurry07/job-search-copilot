@@ -169,7 +169,7 @@ export async function getProfileSummary(userId: string): Promise<string> {
   let summary = '';
 
   if (profile) {
-    if (profile.current_role) summary += `Current Role: ${profile.current_role}\n`;
+    if (profile.current_title) summary += `Current Role: ${profile.current_title}\n`;
     if (profile.years_of_experience) summary += `Experience: ${profile.years_of_experience} years\n`;
     if (profile.bio) summary += `\n${profile.bio}\n`;
     if (profile.skills?.length) summary += `\nSkills: ${profile.skills.join(', ')}\n`;
