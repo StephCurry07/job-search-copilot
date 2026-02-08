@@ -419,8 +419,13 @@ const ThreadHistoryList = React.forwardRef<
 
     if (!threads?.items) return [];
 
+    // Deduplicate threads by ID first
+    const uniqueThreads = Array.from(
+      new Map(threads.items.map((thread: TamboThread) => [thread.id, thread])).values()
+    );
+
     const query = searchQuery.toLowerCase();
-    return threads.items.filter((thread: TamboThread) => {
+    return uniqueThreads.filter((thread: TamboThread) => {
       const nameMatches = thread.name?.toLowerCase().includes(query) ?? false;
       const idMatches = thread.id.toLowerCase().includes(query);
 

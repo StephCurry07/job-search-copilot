@@ -4,10 +4,11 @@ import { cn } from "@/lib/utils";
 import { z } from "zod";
 
 export const missingSkillsPanelSchema = z.object({
-  missingSkills: z.array(z.string()).describe("Missing skills"),
+  missingSkills: z.array(z.string()).default([]).describe("Missing skills"),
   suggestions: z
     .array(z.string())
     .optional()
+    .default([])
     .describe("Suggested learning or actions"),
   notes: z.string().optional().describe("Additional notes"),
   className: z.string().optional(),

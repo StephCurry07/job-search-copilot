@@ -4,11 +4,12 @@ import { cn } from "@/lib/utils";
 import { z } from "zod";
 
 export const generatedContentPanelSchema = z.object({
-  resumeBullets: z.array(z.string()).describe("Tailored resume bullets"),
+  resumeBullets: z.array(z.string()).default([]).describe("Tailored resume bullets"),
   coverLetterParagraphs: z
     .array(z.string())
+    .default([])
     .describe("Cover letter paragraphs"),
-  talkingPoints: z.array(z.string()).describe("Interview talking points"),
+  talkingPoints: z.array(z.string()).default([]).describe("Interview talking points"),
   className: z.string().optional(),
 });
 
@@ -17,9 +18,9 @@ export type GeneratedContentPanelProps = z.infer<
 >;
 
 export function GeneratedContentPanel({
-  resumeBullets,
-  coverLetterParagraphs,
-  talkingPoints,
+  resumeBullets = [],
+  coverLetterParagraphs = [],
+  talkingPoints = [],
   className,
 }: GeneratedContentPanelProps) {
   return (
